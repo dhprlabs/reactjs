@@ -18,7 +18,7 @@ Each major topic from the React docs is separated into its own **directory**. In
 
 ## Notes and Documentation
 
-For every topic, there’s a corresponding `notes.md` file where I write:
+For every topic, there’s a corresponding `README.md` file where I write:
 
 - Key concepts and definitions
 
