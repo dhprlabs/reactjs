@@ -182,3 +182,76 @@ function MyButton() {
 ```
 
 - Notice here the `handleClick` function is passed as a reference to the onClick property similar to what you have seen in javascript event handling syntax.
+
+## Updating the screen
+
+- If you want that your component remembers something then, you can add `state` to your component.
+
+- First, you will import the `useState` and then you will use it inside your component.
+
+- Remember that it gives you two things: current value of the state & a function to update it.
+
+- By convention they are given name as `something` and `setSomething`.
+
+```js
+import { useState } from 'react';
+
+function MyButton() {
+    const [count, setCount] = useState(0);
+
+    function handleClick() {
+        setCount(count + 1);
+    }
+
+    return (
+        <button onClick={handleClick}> Count: {count} </button>
+    );
+}
+```
+
+- Note: If you will render the same component multiple times, each component will get its own state.
+
+## Using Hooks
+
+- Functions starting with `use` are called Hooks. For example, `useState`. You can also create your own Hooks by combining the existing ones.
+
+- They are stricter than functions. You can not use them in loops or in conditions. 
+
+- What most people do: 
+
+```js
+function MyComponent({ showCounter }) {
+	if (showCounter) {
+		const [count, setCount] = useState(0); // Not allowed :(
+		return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+	}
+
+	return <p>Counter is hidden.</p>;
+}
+```
+
+- How it should be actually done: 
+
+```js
+function MyComponent({ showCounter }) {
+	const [count, setCount] = useState(0); // Always called :)
+
+	if (!showCounter) {
+		return <p>Counter is hidden.</p>;
+	}
+
+	return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+}
+```
+
+## Sharing data b/w components
+
+- Currently from the code in the `Updating the screen` section, you can notice that when you are using say two buttons, not both of them are incrementing when you are click anyone of them.
+
+![1](/assets/1.png)
+
+- So, what our current goal is we need to increment the states of both components at the same time.
+
+![2](/assets/2.png)
+
+- We will take the help of `props` here. What we will do is move the state from both the components to their parent and then, pass the state to the button component.
