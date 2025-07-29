@@ -248,10 +248,44 @@ function MyComponent({ showCounter }) {
 
 - Currently from the code in the `Updating the screen` section, you can notice that when you are using say two buttons, not both of them are incrementing when you are click anyone of them.
 
-![1](/assets/1.png)
+![without-props-image](./assets/1.png)
 
-- So, what our current goal is we need to increment the states of both components at the same time.
+- So, what our current goal is to increment the states of both components at the same time.
 
-![2](/assets/2.png)
+![with-props-image](./assets/2.png)
 
-- We will take the help of `props` here. What we will do is move the state from both the components to their parent and then, pass the state to the button component.
+- You will take the help of `props` here. What we will do is move the state from both the components to their parent and then, pass the state to the button component.
+
+- So, you need to change the main function as follows:
+
+```js
+export default function MyApp() {
+	const [count, setCount] = useState(0);
+
+	function handleClick() {
+		setCount(count + 1);
+	}
+
+	return (
+		<div>
+		<h1>Counters that update together</h1>
+		<MyButton count={count} onClick={handleClick} />
+		<MyButton count={count} onClick={handleClick} />
+		</div>
+	);
+}
+```
+
+- Now, you just need to modify the `MyButton` component a bit.
+
+```js
+function MyButton({ count, onClick }) {
+	return (
+		<button onClick={onClick}>
+		Clicked {count} times
+		</button>
+	);
+}
+```
+
+-  This is called “lifting state up”. By moving state up, you’ve shared it between components.
