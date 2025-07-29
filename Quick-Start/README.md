@@ -1,4 +1,4 @@
-### Components
+## Components
 
 - In react, everything is structured as a component. A component is a piece of UI (User Interface) that has its own appearance and logic. It can be something like a button or a webpage. 
 
@@ -14,7 +14,7 @@ function MyButton() {
 
 - In react, all the components are by convention started with first letter to be capital.
 
-### Export 
+## Export 
 
 - Let's recall what you have learn in javascript. There are two types of export for a module:
 
@@ -53,7 +53,7 @@ console.log(greetUser('Dhairya'));
 
 - Hence, to keep the code clean, we use `export default` in react.
 
-### JSX syntax
+## JSX syntax
 
 - In react, the above code's syntax are called `jsx` can they are used for convenience but, they are optional. Also, all the development tools supports the syntax.
 
@@ -70,7 +70,7 @@ function AboutPage() {
 }
 ```
 
-### Styling 
+## Styling 
 
 - You can style the html elements using the `ClassName` attribute instead of `class`.
 
@@ -88,7 +88,7 @@ function AboutPage() {
 
 - You can add the CSS files either by using `link` tag in the main html file or if you are using any build tool then you must see its documentation.
 
-### Displaying data
+## Displaying data
 
 - You can use javascript in your react's components and also apply markup to it.
 
@@ -126,7 +126,7 @@ export default function Profile() {
 }
 ```
 
-### Conditional rendering 
+## Conditional rendering 
 
 - In react, there is no special syntax for conditionally rendering a component. You can use basic javascript for it.
 
@@ -145,7 +145,7 @@ return (
 );
 ```
 
-### Working with list
+## Working with list
 
 - When you are given a list you can create a react component using javascript's functions like `map()` in array or `for` loop.
 
@@ -165,7 +165,7 @@ return (
 );
 ```
 
-### Responding to events
+## Responding to events
 
 - For handling events, you can declare event handler in your component itself. 
 
