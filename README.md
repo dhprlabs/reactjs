@@ -2,7 +2,7 @@
 
 Welcome to my **React.js Learning Repository**!  
 
-This is where I document and implement everything I learn while going through the [official React.js documentation](https://react.dev/).  
+This is where I document and implement everything I learn while going through the [official documentation](https://react.dev/).  
 
 The goal of this repo is to **solidify my understanding** by writing code, organizing by topics, and maintaining clear, concise notes.
 
